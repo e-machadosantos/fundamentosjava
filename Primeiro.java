@@ -9,6 +9,21 @@ public class Primeiro {
 			return quantidade == 6;
 		}		
 	
+	private static int calcularAnoNascimento(int aIdade) {
+		
+		return 2022 - aIdade;
+	}
+	
+	private static float calcularSalarioTotal(float oSalario, int osMeses) {
+		
+		return oSalario * osMeses;
+	}
+	
+	private static String obterSituacao(int aIdade) {
+		
+		return aIdade < 50 ? "iniciante" : "veterano";
+	}
+	
 	public static void main(String [] args) {		
 		
 		int qtde = args.length;
@@ -25,10 +40,10 @@ public class Primeiro {
 			boolean javaDev = Boolean.valueOf(args[4]);
 			int meses = Integer.valueOf(args[5]);
 			
-			int anoNascimento = 2022 - idade;
-			float salarioTotal = salario * meses;
+			int anoNascimento = calcularAnoNascimento(idade);
+			float salarioTotal = calcularSalarioTotal(salario, meses);
 			
-			String situacao = idade < 50 ? "iniciante" : "veterano";			
+			String situacao = obterSituacao(idade);			
 			String status = "instavel";
 			if(salarioTotal > 100000.0) {
 				status = "estavel";
