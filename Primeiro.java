@@ -4,9 +4,17 @@ public class Primeiro {
 	//float		= Float
 	//boolean	= Boolean
 	//			= String
-	public static void main(String [] args) {
+	
+	private static int qtde;
+	
+	private boolean validar() {
+			return qtde == 6;
+		}
 		
-		int qtde = args.length;
+	
+	public static void main(String [] args) {		
+		
+		qtde = args.length;
 
 		String nome = "Sr,";
 		
