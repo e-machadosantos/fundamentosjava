@@ -21,19 +21,11 @@ public class Primeiro {
 			int anoNascimento = 2022 - idade;
 			float salarioTotal = salario * meses;
 			
-			String situacao;
-			if(idade < 50) {
-				situacao = "iniciante";
-			} else {
-				situacao = "veterano";
-			}
-			
-			String status;
-			if(salarioTotal < 100000.0) {
-				status = "instavel";
-			} else {
+			String situacao = idade < 50 ? "iniciante" : "veterano";			
+			String status = "instavel";
+			if(salarioTotal > 100000.0) {
 				status = "estavel";
-			}			
+			}		
 			
 			System.out.println("Nome: " + nome);
 			System.out.println("Sobrenome: " + sobrenome);			
