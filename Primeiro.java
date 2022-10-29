@@ -21,14 +21,29 @@ public class Primeiro {
 			int anoNascimento = 2022 - idade;
 			float salarioTotal = salario * meses;
 			
+			String situacao;
+			if(idade < 50) {
+				situacao = "iniciante";
+			} else {
+				situacao = "veterano";
+			}
 			
-			System.out.println(nome);
-			System.out.println(sobrenome);			
-			System.out.println(salario);
-			System.out.println(javaDev);
+			String status;
+			if(salarioTotal < 100000.0) {
+				status = "instavel";
+			} else {
+				status = "estavel";
+			}			
 			
-			System.out.println(anoNascimento);
-			System.out.println(salarioTotal);			
+			System.out.println("Nome: " + nome);
+			System.out.println("Sobrenome: " + sobrenome);			
+			System.out.println("Salario :" + salario);
+			System.out.println("Dev: " + javaDev);
+			
+			System.out.println("Ano Nascimento: " + anoNascimento);
+			System.out.println("Salario Total: " + salarioTotal);
+			System.out.println("Situacao: " + situacao);
+			System.out.println("Status: " + status);
 		} else {
 			System.out.println(nome + " " + "Impossivel exibir o relatorio: " + qtde + "!");			
 		}
