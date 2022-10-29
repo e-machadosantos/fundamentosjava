@@ -5,20 +5,19 @@ public class Primeiro {
 	//boolean	= Boolean
 	//			= String
 	
-	private static int qtde;
-	
-	private boolean validar() {
-			return qtde == 6;
-		}
-		
+	private static boolean validar(int quantidade) {
+			return quantidade == 6;
+		}		
 	
 	public static void main(String [] args) {		
 		
-		qtde = args.length;
+		int qtde = args.length;
 
 		String nome = "Sr,";
 		
-		if(qtde == 6) {
+		boolean validado = validar(qtde);
+		
+		if(validado) {
 			nome = args[0];		
 			String sobrenome = args[1];		
 			int idade = Integer.valueOf(args[2]);		
