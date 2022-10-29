@@ -16,6 +16,7 @@ public class Primeiro {
 		// System.out.println(nome + " " + sobrenome + " " + args[2]);	
 		
 		// Utilzando a variavel idade diretamente
+		// Alterado
 		System.out.println(nome + " " + sobrenome + " " + idade);		
 	}
 }
