@@ -6,17 +6,31 @@ public class Primeiro {
 	//			= String
 	public static void main(String [] args) {
 		
-		String nome = args[0];
+		int qtde = args.length;
+
+		String nome = "Sr,";
 		
-		String sobrenome = args[1];
-		
-		int idade = Integer.valueOf(args[2]);
-	
-		// Utilizando o parâmetro args para passagem de valor para idade
-		// System.out.println(nome + " " + sobrenome + " " + args[2]);	
-		
-		// Utilzando a variavel idade diretamente
-		// Alterado
-		System.out.println(nome + " " + sobrenome + " " + idade);		
+		if(qtde == 6) {
+			nome = args[0];		
+			String sobrenome = args[1];		
+			int idade = Integer.valueOf(args[2]);		
+			float salario = Float.valueOf(args[3]);		
+			boolean javaDev = Boolean.valueOf(args[4]);
+			int meses = Integer.valueOf(args[5]);
+			
+			int anoNascimento = 2022 - idade;
+			float salarioTotal = salario * meses;
+			
+			
+			System.out.println(nome);
+			System.out.println(sobrenome);			
+			System.out.println(salario);
+			System.out.println(javaDev);
+			
+			System.out.println(anoNascimento);
+			System.out.println(salarioTotal);			
+		} else {
+			System.out.println(nome + " " + "Impossivel exibir o relatorio: " + qtde + "!");			
+		}
 	}
 }
