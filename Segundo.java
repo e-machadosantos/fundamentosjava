@@ -1,11 +1,11 @@
 public class Segundo {
 	public static void main(String [] args) {
 		
-		// usanto for eatch
-		// for(tipoColecao obj : nomeColecao)
+		// usanto for tradicional
+		// for(inicializacao; condicao; incremento)
 		
-	for(String nome : args) {
-			System.out.println(nome);
+	for(int i = 0; i < args.length; i++) {
+			System.out.println(args[i]);
 		}
 	}
 }
