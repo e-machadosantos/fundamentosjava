@@ -5,6 +5,13 @@ public class Primeiro {
 	//boolean	= Boolean
 	//			= String
 	
+	private static String nome;
+	private static String sobrenome;
+	private static int idade;
+	private static float salario;
+	private static boolean javaDev;
+	private static int meses;
+	
 	private static boolean validar(int quantidade) {
 			return quantidade == 6;
 		}		
@@ -24,30 +31,37 @@ public class Primeiro {
 		return aIdade < 50 ? "iniciante" : "veterano";
 	}
 	
+	private static String obterStatus(float oSalarioTotal) {
+		if(oSalarioTotal > 100000.0) {
+			return "estavel";
+		}		
+		return "instavel";
+	}
+	
+	private static void tratarParametros(String [] argumento) {
+		nome = argumento[0];		
+		sobrenome = argumento[1];		
+		idade = Integer.valueOf(argumento[2]);		
+		salario = Float.valueOf(argumento[3]);		
+		javaDev = Boolean.valueOf(argumento[4]);
+		meses = Integer.valueOf(argumento[5]);
+	}
+	
 	public static void main(String [] args) {		
 		
 		int qtde = args.length;
 
-		String nome = "Sr,";
+		nome = "Sr,";
 		
 		boolean validado = validar(qtde);
 		
 		if(validado) {
-			nome = args[0];		
-			String sobrenome = args[1];		
-			int idade = Integer.valueOf(args[2]);		
-			float salario = Float.valueOf(args[3]);		
-			boolean javaDev = Boolean.valueOf(args[4]);
-			int meses = Integer.valueOf(args[5]);
+			tratarParametros(args);			
 			
 			int anoNascimento = calcularAnoNascimento(idade);
-			float salarioTotal = calcularSalarioTotal(salario, meses);
-			
+			float salarioTotal = calcularSalarioTotal(salario, meses);			
 			String situacao = obterSituacao(idade);			
-			String status = "instavel";
-			if(salarioTotal > 100000.0) {
-				status = "estavel";
-			}		
+			String status = obterStatus(salarioTotal);		
 			
 			System.out.println("Nome: " + nome);
 			System.out.println("Sobrenome: " + sobrenome);			
