@@ -5,7 +5,7 @@ public class Primeiro {
 	//boolean	= Boolean
 	//			= String
 	
-	private static String nome;
+	private static String nome = "Sr,";
 	private static String sobrenome;
 	private static int idade;
 	private static float salario;
@@ -47,32 +47,36 @@ public class Primeiro {
 		meses = Integer.valueOf(argumento[5]);
 	}
 	
+	private static void imprimir() {
+		
+		int anoNascimento = calcularAnoNascimento(idade);
+		float salarioTotal = calcularSalarioTotal(salario, meses);
+		String situacao = obterSituacao(idade);			
+		String status = obterStatus(salarioTotal);
+		
+		System.out.println("Nome: " + nome);
+		System.out.println("Sobrenome: " + sobrenome);			
+		System.out.println("Salario :" + salario);
+		System.out.println("Dev: " + javaDev);			
+		System.out.println("Ano Nascimento: " + anoNascimento);
+		System.out.println("Salario Total: " + salarioTotal);
+		System.out.println("Situacao: " + situacao);
+		System.out.println("Status: " + status);
+	}
+	
 	public static void main(String [] args) {		
 		
-		int qtde = args.length;
-
-		nome = "Sr,";
+		int qtde = args.length;		
 		
 		boolean validado = validar(qtde);
 		
 		if(validado) {
-			tratarParametros(args);			
 			
-			int anoNascimento = calcularAnoNascimento(idade);
-			float salarioTotal = calcularSalarioTotal(salario, meses);			
-			String situacao = obterSituacao(idade);			
-			String status = obterStatus(salarioTotal);		
+			tratarParametros(args);
+			imprimir();
 			
-			System.out.println("Nome: " + nome);
-			System.out.println("Sobrenome: " + sobrenome);			
-			System.out.println("Salario :" + salario);
-			System.out.println("Dev: " + javaDev);
-			
-			System.out.println("Ano Nascimento: " + anoNascimento);
-			System.out.println("Salario Total: " + salarioTotal);
-			System.out.println("Situacao: " + situacao);
-			System.out.println("Status: " + status);
 		} else {
+			
 			System.out.println(nome + " " + "Impossivel exibir o relatorio: " + qtde + "!");			
 		}
 	}
