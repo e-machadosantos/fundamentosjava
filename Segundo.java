@@ -1,17 +1,17 @@
 public class Segundo {
 	public static void main(String [] args) {
 		
-		// usanto While
+		// usanto Do While
+		
 		// inicializacao
-		// while(condicao) {
-		//		incremento
-		// }
-		
+		// do {
+		//		incremento	
+		// }while(condicao);
+				
 		int a = 0;
-		while(a < args.length) {
-			System.out.println(args[a]);
-		
+		do {
+			System.out.println(args[a]);			
 			a++;
-		}
+		} while (a < args.length);
 	}
 }
